@@ -1,25 +1,31 @@
 import java.util.Scanner;
-public class palindrome {
+public class palindrome
+{
     public static void main(String args[]) {
         Scanner userInput = new Scanner(System.in);
-        String palindrome;
+        String input;
         String reversePalindrome;
         String confirmedResult;
         String result;
-        System.out.printf("Please enter a word to check if its a palindrome: ");
+        input = "";
+        while(true) {
         reversePalindrome = "";
-        palindrome = userInput.nextLine();
-        palindrome = palindrome.replace(" ", "");
-        for(int counter = 1; counter < palindrome.length() + 1; counter++){
-            reversePalindrome += palindrome.charAt(palindrome.length() - counter);
+        System.out.printf("Enter a sentence or word to check for a palindrome!%n'exit' to quit: ");
+        input = userInput.nextLine();
+        if(input.equalsIgnoreCase("exit")) break;
+        input = input.replace(" ", "");
+        for(int counter = 1; counter < input.length() + 1; counter++){
+            reversePalindrome += input.charAt(input.length() - counter);
         }
-        if(palindrome.equalsIgnoreCase(reversePalindrome)){
+        if(input.equalsIgnoreCase(reversePalindrome)){
         result = "EQUAL";
         confirmedResult = "TRUE";
         } else{
         result = "NOT EQUAL";
         confirmedResult = "TRUE";
         }
-        System.out.printf("The word %s is %s to %s reversed! Palindrome %s", palindrome, result, reversePalindrome, confirmedResult);
+        System.out.printf("The word %s is %s to %s reversed! Palindrome %s%n", input, result, reversePalindrome, confirmedResult);
+        }
+    System.out.printf("Goodbye! %n");
     }
 }
