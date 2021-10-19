@@ -22,7 +22,7 @@ public class palindrome
         confirmedResult = "TRUE";
         } else{
         result = "NOT EQUAL";
-        confirmedResult = "TRUE";
+        confirmedResult = "FALSE";
         }
         System.out.printf("The word %s is %s to %s reversed! Palindrome %s%n", input, result, reversePalindrome, confirmedResult);
         }
